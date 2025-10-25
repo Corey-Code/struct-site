@@ -455,8 +455,8 @@ textarea {
 /* Articles section */
 .articles {
   box-sizing: border-box;
-  padding: 50px 0;
-  background-color: #4D4D4D;
+  padding: 70px 0;
+  background-color: #3A3F54; /* new cool gray-blue to complement palette */
   color: white;
 }
 
@@ -472,7 +472,8 @@ textarea {
 .articles-text {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  align-items: center;
+  width: 100%;
 }
 
 .articles-title {
@@ -481,40 +482,44 @@ textarea {
   justify-content: center;
   font-size: 2.5em;
   font-weight: bold;
+  text-align: center;
 }
 
 .articles-message {
-  max-width: 100%;
-  margin: 50px 0;
-  line-height: 35px;
-  font-size: 1.2em;
+  max-width: 800px;
+  margin: 15px 0 40px 0;
+  line-height: 30px;
+  font-size: 1.1em;
   text-align: center;
+  color: #f1f1f1;
 }
 
 .articles-grid {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
 }
 
 .articles-grid-row {
   display: flex;
   width: 100%;
   flex-direction: column;
+  align-items: center;
 }
 
 .article-card {
   display: block;
   box-sizing: border-box;
-  width: 100%;
+  width: calc(100% - 40px);
+  max-width: 360px;
   margin: 10px 0;
   padding: 20px;
   border: 1px solid #ECA539BB;
   border-radius: 8px;
   text-decoration: none;
-  background-color: #3B3B3B;
+  background-color: #2f3242;
   color: white;
   transition: transform 120ms ease, box-shadow 120ms ease;
 }
@@ -528,7 +533,16 @@ textarea {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 8px;
+  text-align: center;
   color: #ECA539;
+}
+
+.article-card-desc {
+  font-size: 0.95em;
+  color: #e6e6e6;
+  line-height: 1.5em;
+  white-space: pre-wrap;
+  margin-bottom: 10px;
 }
 
 .article-card-cta {
@@ -760,34 +774,32 @@ textarea {
   }
 
   /* Articles desktop adjustments */
-  .articles-content {
-    flex-direction: row;
-  }
+.articles-content {
+  flex-direction: column;
+}
 
-  .articles {
-    padding: 100px 0;
-  }
+.articles {
+  padding: 100px 0;
+}
 
   .articles-grid {
-    width: 700px;
+    width: 100%;
   }
 
   .articles-grid-row {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 24px;
   }
 
   .articles-message {
-    margin: 0;
-    margin-top: 25px;
-    max-width: 350px;
-    line-height: 35px;
-    font-size: 1.2em;
-    text-align: initial;
+    margin: 10px 0 50px 0;
+    max-width: none;
+    text-align: center;
   }
 
   .articles-text {
-    width: 500px;
+    width: 100%;
   }
 
   .articles-title {
@@ -795,7 +807,7 @@ textarea {
   }
 
   .article-card {
-    width: 31%;
+    width: 360px;
     margin: 0;
   }
 }

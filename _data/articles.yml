@@ -1,0 +1,21 @@
+- title: "Is Cursor Chasing Jr. Developers?"
+  description: |
+        The rise of AI-assisted coding tools like Cursor has sparked an interesting debate:  
+    are they empowering junior developers — or quietly replacing them?
+
+    Cursor’s promise of “instant code understanding” and AI pair-programming can feel
+    revolutionary. But beneath the surface
+
+- title: "When To Refactor vs. Rewrite"
+  description: |
+        Every engineering team faces the same crossroads: refactor the old system—or rewrite it from scratch?  
+    The right call depends on risk, timeline, and the true cost of complexity.
+
+    We break down a pragmatic checklist to decide with confidence and avoid costly detours.
+
+- title: "Shipping Faster Without Breaking Things"
+  description: |
+        Speed and stability aren’t enemies.  
+    With the right guardrails—feature flags, trunk-based development, and contract testing—teams can move quickly and safely.
+
+    Here’s how high-performing teams ship continuously without turning every release into a fire drill.

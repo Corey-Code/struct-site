@@ -82,3 +82,64 @@ function scrollToElement(id) {
 
   element.scrollIntoView();
 }
+
+// Load and render articles from YAML into the Articles section
+async function renderArticlesFromYaml() {
+  const container = document.getElementById("articles-grid-row");
+  if (!container) {
+    return;
+  }
+
+  /** @type {{title: string, description: string}[]} */
+  let articles = [];
+
+  try {
+    const response = await fetch("./_data/articles.yml", { cache: "no-store" });
+    if (response && response.ok) {
+      const yamlText = await response.text();
+      const parsed = (window.jsyaml && window.jsyaml.load) ? window.jsyaml.load(yamlText) : [];
+      if (Array.isArray(parsed)) {
+        articles = parsed.slice(0, 3);
+      }
+    }
+  } catch (err) {
+    console.log("Failed to load ./_data/articles.yml", err);
+  }
+
+  if (!articles || articles.length === 0) {
+    articles = [
+      { title: "Article 1", description: "Coming soon." },
+      { title: "Article 2", description: "Coming soon." },
+      { title: "Article 3", description: "Coming soon." }
+    ];
+  }
+
+  container.innerHTML = "";
+
+  articles.forEach((article, index) => {
+    const anchor = document.createElement("a");
+    anchor.className = "article-card";
+    anchor.href = `REPLACE_ARTICLE_LINK_${index + 1}`;
+    anchor.target = "_blank";
+    anchor.rel = "noopener";
+
+    const title = document.createElement("div");
+    title.className = "article-card-title";
+    title.textContent = (article && article.title) ? article.title : `Article ${index + 1}`;
+
+    const desc = document.createElement("div");
+    desc.className = "article-card-desc";
+    const descriptionText = (article && article.description) ? String(article.description).trim() : "";
+    desc.textContent = descriptionText;
+
+    anchor.appendChild(title);
+    anchor.appendChild(desc);
+    container.appendChild(anchor);
+  });
+}
+
+if (document && document.addEventListener) {
+  document.addEventListener("DOMContentLoaded", () => {
+    renderArticlesFromYaml();
+  });
+}
