@@ -452,6 +452,90 @@ textarea {
   font-weight: bold;
 }
 
+/* Articles section */
+.articles {
+  box-sizing: border-box;
+  padding: 50px 0;
+  background-color: #4D4D4D;
+  color: white;
+}
+
+.articles-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
+
+.articles-text {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.articles-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.articles-message {
+  max-width: 100%;
+  margin: 50px 0;
+  line-height: 35px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.articles-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+.articles-grid-row {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.article-card {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 10px 0;
+  padding: 20px;
+  border: 1px solid #ECA539BB;
+  border-radius: 8px;
+  text-decoration: none;
+  background-color: #3B3B3B;
+  color: white;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.article-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.article-card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ECA539;
+}
+
+.article-card-cta {
+  font-size: 0.95em;
+  color: white;
+}
+
 .toast {
   display: none;
   position: fixed;
@@ -673,6 +757,46 @@ textarea {
 
   .technology-title {
     font-size: 4.3em;
+  }
+
+  /* Articles desktop adjustments */
+  .articles-content {
+    flex-direction: row;
+  }
+
+  .articles {
+    padding: 100px 0;
+  }
+
+  .articles-grid {
+    width: 700px;
+  }
+
+  .articles-grid-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .articles-message {
+    margin: 0;
+    margin-top: 25px;
+    max-width: 350px;
+    line-height: 35px;
+    font-size: 1.2em;
+    text-align: initial;
+  }
+
+  .articles-text {
+    width: 500px;
+  }
+
+  .articles-title {
+    font-size: 4.3em;
+  }
+
+  .article-card {
+    width: 31%;
+    margin: 0;
   }
 }
 
