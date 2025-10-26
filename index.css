@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Montserrat;
-  color: #ECA539;
+  color: #eca539;
   background-color: #252526;
 }
 
@@ -42,7 +42,7 @@ textarea {
 
 .contact {
   padding: 50px 0;
-  background-color: #ECA539;
+  background-color: #eca539;
   color: white;
 }
 
@@ -69,8 +69,8 @@ textarea {
   border-radius: 0;
   font-family: inherit;
   font-size: 1em;
-  background-color: #AA7725;
-  color: #FFFFFF;
+  background-color: #aa7725;
+  color: #ffffff;
 }
 
 .contact-input:active,
@@ -126,7 +126,7 @@ textarea {
 .header {
   position: relative;
   height: 65px;
-  border-bottom: solid 2px #ECA539BB;
+  border-bottom: solid 2px #eca539bb;
   z-index: 5;
   background-color: #252526;
 }
@@ -188,7 +188,7 @@ textarea {
 .menu-line {
   width: 35px;
   height: 5px;
-  background-color: #ECA539;
+  background-color: #eca539;
   margin: 6px 0;
 }
 
@@ -283,7 +283,7 @@ textarea {
 .services-items {
   margin-top: 25px;
   line-height: 30px;
-  color: #ECA539;
+  color: #eca539;
   text-align: center;
   font-size: 1em;
   font-weight: bold;
@@ -322,7 +322,7 @@ textarea {
 
 .services-title span {
   font-weight: bold;
-  color: #ECA539;
+  color: #eca539;
 }
 
 .software {
@@ -371,7 +371,7 @@ textarea {
 
 .software-content-message span {
   font-weight: bold;
-  color: #ECA539;
+  color: #eca539;
 }
 
 .software-help {
@@ -390,7 +390,7 @@ textarea {
 .technology {
   box-sizing: border-box;
   padding: 50px 0;
-  background-color: #4D4D4D;
+  background-color: #4d4d4d;
   color: white;
 }
 
@@ -452,6 +452,158 @@ textarea {
   font-weight: bold;
 }
 
+/* ────────────────────────────────
+   ARTICLES SECTION
+──────────────────────────────── */
+.articles {
+  box-sizing: border-box;
+  padding: 70px 0;
+  background-color: #3a3f54; /* cool gray-blue */
+  color: #fff;
+}
+
+/* Content layout */
+.articles-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.articles-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.articles-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.articles-message {
+  max-width: 800px;
+  margin: 15px 0 40px;
+  line-height: 1.8;
+  font-size: 1.1em;
+  color: #f1f1f1;
+}
+
+/* ────────────────────────────────
+   GRID LAYOUT
+──────────────────────────────── */
+.articles-grid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#articles-grid-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+/* ────────────────────────────────
+   ARTICLE CARDS
+──────────────────────────────── */
+.article-card {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #2f3242;
+  border: 1px solid #eca539bb;
+  border-radius: 10px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+  overflow: hidden;
+  height: 200px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* fade overlay */
+.article-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: linear-gradient(
+    to bottom,
+    rgba(47, 50, 66, 0) 0%,
+    rgba(47, 50, 66, 1) 100%
+  );
+  pointer-events: none;
+}
+
+/* Title + Description */
+.article-card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: center;
+  color: #eca539;
+}
+
+.article-card-desc {
+  font-size: 0.95em;
+  color: #e6e6e6;
+  line-height: 1.5em;
+  white-space: pre-wrap;
+  margin-bottom: 15px;
+  overflow: hidden;
+  max-height: 140px;
+
+  /* additional smooth fade mask (backup for browsers w/o ::after) */
+  -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+}
+
+/* ────────────────────────────────
+   CTA LINK ("Full Article")
+──────────────────────────────── */
+.full-article-link {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  z-index: 2;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.full-article-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.full-article-link .icon {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+}
+
 .toast {
   display: none;
   position: fixed;
@@ -460,14 +612,14 @@ textarea {
   width: 290px;
   padding: 10px;
   border-radius: 10px;
-  background-color: #ECA539CC;
+  background-color: #eca539cc;
   color: white;
   z-index: 1001;
   cursor: pointer;
 }
 
 .toast:hover {
-  background-color: #ECA539;
+  background-color: #eca539;
 }
 
 .toast.hidden {
@@ -674,13 +826,51 @@ textarea {
   .technology-title {
     font-size: 4.3em;
   }
+
+  /* Articles desktop adjustments */
+  .articles-content {
+    flex-direction: column;
+  }
+
+  .articles {
+    padding: 100px 0;
+  }
+
+  .articles-grid {
+    width: 100%;
+  }
+
+  .articles-grid-row {
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .articles-message {
+    margin: 10px 0 50px 0;
+    max-width: none;
+    text-align: center;
+  }
+
+  .articles-text {
+    width: 100%;
+  }
+
+  .articles-title {
+    font-size: 4.3em;
+  }
+
+  .article-card {
+    width: 360px;
+    margin: 0;
+  }
 }
 
 @font-face {
   font-family: Montserrat;
-  src: url("./fonts/Montserrat-Regular.ttf") format("truetype"),
-    url("./fonts/Montserrat-Light.ttf") format("truetype"),
-    url("./fonts/Montserrat-Bold.ttf") format("truetype")
+  src: url('./fonts/Montserrat-Regular.ttf') format('truetype'),
+    url('./fonts/Montserrat-Light.ttf') format('truetype'),
+    url('./fonts/Montserrat-Bold.ttf') format('truetype');
 }
 
 @keyframes slide {
